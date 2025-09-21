@@ -103,10 +103,10 @@ const props = defineProps<DashboardProps>();
 
                 <div class="grid gap-4 md:grid-cols-2">
                     <StatCard
-                        title="Total Users"
-                        :value="props.stats.totalUsers"
-                        :icon="Users"
-                        color="blue"
+                        title="Private Files"
+                        :value="props.stats.privateFiles"
+                        :icon="EyeOff"
+                        color="gray"
                     />
                     <StatCard
                         title="Total Files"
@@ -115,10 +115,11 @@ const props = defineProps<DashboardProps>();
                         color="green"
                     />
                     <StatCard
-                        title="Storage Used"
-                        :value="props.stats.totalFileSize"
-                        :icon="HardDrive"
-                        color="purple"
+                        title="New Files"
+                        :value="props.stats.filesThisMonth"
+                        subtitle="This month"
+                        :icon="TrendingUp"
+                        color="green"
                     />
                     <StatCard
                         title="Public Files"
@@ -133,10 +134,10 @@ const props = defineProps<DashboardProps>();
             <div class="grid gap-4 md:grid-cols-2">
                 <div class="grid gap-4 md:grid-cols-2">
                     <StatCard
-                        title="Private Files"
-                        :value="props.stats.privateFiles"
-                        :icon="EyeOff"
-                        color="gray"
+                        title="Total Users"
+                        :value="props.stats.totalUsers"
+                        :icon="Users"
+                        color="blue"
                     />
                     <StatCard
                         title="New Users"
@@ -146,25 +147,24 @@ const props = defineProps<DashboardProps>();
                         color="blue"
                     />
                     <StatCard
-                        title="New Files"
-                        :value="props.stats.filesThisMonth"
-                        subtitle="This month"
-                        :icon="TrendingUp"
-                        color="green"
-                    />
-                    <StatCard
                         title="Verified Users"
                         :value="props.stats.verifiedUsers"
                         :icon="UserCheck"
                         color="green"
                     />
-                </div>
-                <div class="grid gap-4 md:grid-rows-2">
                     <StatCard
-                        title="Unverified"
+                        title="Unverified Users"
                         :value="props.stats.unverifiedUsers"
                         :icon="UserX"
                         color="orange"
+                    />
+                </div>
+                <div class="grid gap-4 md:grid-rows-2">
+                    <StatCard
+                        title="Storage Used"
+                        :value="props.stats.totalFileSize"
+                        :icon="HardDrive"
+                        color="purple"
                     />
                     <StatCard
                         title="Verification Rate"
