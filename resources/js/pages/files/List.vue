@@ -361,6 +361,7 @@ onMounted(() => {
                         </div>
                     </template>
                 </Column>
+                <Column field="share_id" header="Share ID"></Column>
                 <Column field="mime_type" header="Type"></Column>
                 <Column field="formatted_size" header="Size"></Column>
                 <Column field="visibility" header="Visibility">
