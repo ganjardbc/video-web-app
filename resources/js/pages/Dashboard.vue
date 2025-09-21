@@ -177,18 +177,35 @@ const props = defineProps<DashboardProps>();
 
             <!-- Charts and Recent Activity -->
             <div class="grid gap-6 lg:grid-cols-2">
-                <!-- Recent Users -->
-                <RecentActivity
-                    title="Recent Users"
-                    :items="props.recentUsers.map(user => ({
-                        id: user.id,
-                        name: user.name,
-                        type: 'user' as const,
-                        created_at: user.created_at,
-                        is_verified: user.is_verified
-                    }))"
-                    type="users"
-                />
+                <div class="grid grid-rows-2 gap-6">
+                    <!-- Recent Users -->
+                    <RecentActivity
+                        title="Recent Users"
+                        :items="props.recentUsers.map(user => ({
+                            id: user.id,
+                            name: user.name,
+                            type: 'user' as const,
+                            created_at: user.created_at,
+                            is_verified: user.is_verified
+                        }))"
+                        type="users"
+                    />
+
+                    <!-- Monthly Upload Trend -->
+                    <div class="rounded-lg border bg-card p-6 shadow-sm">
+                        <h3 class="text-lg font-semibold text-foreground mb-4">Monthly Upload Trend</h3>
+                        <div class="space-y-3">
+                            <div
+                                v-for="month in props.monthlyFileUploads"
+                                :key="month.month"
+                                class="flex items-center justify-between"
+                            >
+                                <span class="text-sm text-muted-foreground">{{ month.month }}</span>
+                                <span class="text-sm font-medium">{{ month.count }} files</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Recent Files -->
                 <RecentActivity
@@ -203,21 +220,6 @@ const props = defineProps<DashboardProps>();
                     }))"
                     type="files"
                 />
-            </div>
-
-            <!-- Monthly Upload Trend -->
-            <div class="rounded-lg border bg-card p-6 shadow-sm">
-                <h3 class="text-lg font-semibold text-foreground mb-4">Monthly Upload Trend</h3>
-                <div class="space-y-3">
-                    <div
-                        v-for="month in props.monthlyFileUploads"
-                        :key="month.month"
-                        class="flex items-center justify-between"
-                    >
-                        <span class="text-sm text-muted-foreground">{{ month.month }}</span>
-                        <span class="text-sm font-medium">{{ month.count }} files</span>
-                    </div>
-                </div>
             </div>
 
             <!-- Quick Actions -->
