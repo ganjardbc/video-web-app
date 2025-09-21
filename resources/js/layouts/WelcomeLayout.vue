@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { dashboard, login, register } from '@/routes';
+import { dashboard, login } from '@/routes';
 import { Head, Link } from '@inertiajs/vue3';
 
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
@@ -40,12 +40,6 @@ import AppLogoIcon from '@/components/AppLogoIcon.vue';
                             class="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-gray-500 hover:border-gray-200 dark:text-gray-100 dark:hover:border-gray-500"
                         >
                             Log in
-                        </Link>
-                        <Link
-                            :href="register()"
-                            class="inline-block rounded-sm border border-gray-200 px-5 py-1.5 text-sm leading-normal text-gray-500 hover:border-gray-300 dark:border-gray-500 dark:text-gray-100 dark:hover:border-gray-600"
-                        >
-                            Register
                         </Link>
                     </template>
                 </nav>

@@ -7,7 +7,8 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AuthBase from '@/layouts/AuthLayout.vue';
-import { register } from '@/routes';
+// Registration disabled - import removed
+// import { register } from '@/routes';
 import { request } from '@/routes/password';
 import { Form, Head } from '@inertiajs/vue3';
 import { LoaderCircle } from 'lucide-vue-next';
@@ -87,7 +88,7 @@ defineProps<{
 
                 <Button
                     type="submit"
-                    class="mt-4 w-full"
+                    class="w-full"
                     :tabindex="4"
                     :disabled="processing"
                     data-test="login-button"
@@ -100,10 +101,7 @@ defineProps<{
                 </Button>
             </div>
 
-            <div class="text-center text-sm text-muted-foreground">
-                Don't have an account?
-                <TextLink :href="register()" :tabindex="5">Sign up</TextLink>
-            </div>
+            <!-- Registration link removed as registration is disabled -->
         </Form>
     </AuthBase>
 </template>

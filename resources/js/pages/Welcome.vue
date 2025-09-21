@@ -43,15 +43,21 @@ const processFiles = async (files: FileList | File[]) => {
 
         // Create local preview first
         const localUrl = URL.createObjectURL(file);
-        const filePreview: FilePreview = {
+        const filePreview = {
             original_name: file.name,
             mime_type: file.type,
             size: file.size,
             type: file.type.startsWith('image') ? 'image' : 'video',
             uploading: true,
             progress: 0,
-            localUrl: localUrl
-        };
+            localUrl: localUrl,
+            expires_at: '', // default empty string or appropriate value
+            download_count: 0,
+            file_url: '',
+            extension: '',
+            share_url: '',
+            error: undefined // assuming error is optional
+        } as FilePreview;
 
         previews.value.push(filePreview);
 
@@ -173,6 +179,8 @@ const copyToClipboard = async (text: string, index: number): Promise<void> => {
         copyingStates.value[index] = true;
         await navigator.clipboard.writeText(text);
 
+        alert('Link copied to clipboard!');
+
         // Reset copying state after 2 seconds
         setTimeout(() => {
             copyingStates.value[index] = false;
@@ -194,8 +202,6 @@ const shareFile = async (preview: FilePreview, index: number): Promise<void> => 
             });
         } catch (err) {
             console.error('Sharing failed:', err);
-            // If native sharing fails, fall back to copying
-            await copyToClipboard(shareUrl, index);
         }
     } else if (shareUrl) {
         // Fallback to copying URL
@@ -242,7 +248,6 @@ const handleClearAll = () => {
 };
 
 const handleCopyToClipboard = (text: string, index: number) => {
-    console.log('Copying to clipboard:', text, index); // Debug log
     copyToClipboard(text, index);
 };
 
