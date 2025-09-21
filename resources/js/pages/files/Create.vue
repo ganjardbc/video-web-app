@@ -49,7 +49,7 @@ const isUploading = ref(false);
 const uploadProgress = ref(0);
 
 // File validation constants
-const MAX_FILE_SIZE = 100 * 1024 * 1024; // 100MB in bytes
+const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB in bytes
 const ALLOWED_TYPES = [
     'image/jpeg', 'image/png', 'image/gif', 'image/webp',
     'video/mp4', 'video/webm', 'video/quicktime', 'video/x-msvideo'
@@ -332,7 +332,7 @@ onUnmounted(() => {
                                         Support for images (JPG, PNG, GIF, WebP) and videos (MP4, WebM, MOV, AVI)
                                     </p>
                                     <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">
-                                        Maximum file size: 100MB
+                                        Maximum file size: 50MB
                                     </p>
                                 </div>
                             </div>
