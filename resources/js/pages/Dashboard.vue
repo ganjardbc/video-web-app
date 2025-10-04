@@ -87,8 +87,8 @@ const props = defineProps<DashboardProps>();
                 <div class="flex items-center gap-3 w-full md:w-auto">
                     <Link href="/files/create" class="w-full md:w-auto">
                         <Button class="w-full md:w-auto">
-                            <Plus class="h-4 w-4 mr-2" />
-                            Upload Files
+                            <Plus class="h-4 w-4" />
+                            Upload New Files
                         </Button>
                     </Link>
                 </div>
@@ -244,7 +244,7 @@ const props = defineProps<DashboardProps>();
                             Upload File
                         </Button>
                     </Link>
-                    <Link href="/profile">
+                    <Link href="/settings/profile">
                         <Button variant="outline" class="w-full justify-start">
                             <UserCheck class="h-4 w-4 mr-2" />
                             Profile Settings

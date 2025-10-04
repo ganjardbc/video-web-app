@@ -115,18 +115,18 @@ watch(perPage, () => {
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col gap-6 p-6">
             <!-- Header -->
-            <div class="flex items-center justify-between">
-                <div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="w-full">
                     <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">User Management</h1>
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                         Manage registered users and their accounts
                     </p>
                 </div>
-                <div class="flex items-center gap-3">
-                    <Link href="/users/create">
-                        <Button class="inline-flex items-center gap-2">
+                <div class="w-full md:w-auto flex items-center gap-3">
+                    <Link href="/users/create" class="w-full md:w-auto">
+                        <Button class="inline-flex items-center gap-2 w-full md:w-auto">
                             <Plus class="h-4 w-4" />
-                            Add New User
+                            Create New User
                         </Button>
                     </Link>
                 </div>

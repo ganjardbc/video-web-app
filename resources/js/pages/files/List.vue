@@ -267,14 +267,14 @@ onMounted(() => {
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col gap-4 p-6">
             <!-- Header -->
-            <div class="flex items-center justify-between">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div>
                     <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">File Management</h1>
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
                         Manage your uploaded files, control visibility, and share with others
                     </p>
                 </div>
-                <div class="flex items-center gap-3">
+                <div class="w-full md:w-auto flex items-center gap-3">
                     <button
                         v-if="selectedFiles.length > 0"
                         @click="deleteSelected"
@@ -284,10 +284,10 @@ onMounted(() => {
                         Delete Selected ({{ selectedFiles.length }})
                     </button>
 
-                    <Link href="/files/create">
-                        <Button>
+                    <Link href="/files/create" class="w-full md:w-auto">
+                        <Button class="inline-flex items-center gap-2 w-full md:w-auto">
                             <Plus class="h-4 w-4" />
-                            Create New File
+                            Upload New Files
                         </Button>
                     </Link>
                 </div>

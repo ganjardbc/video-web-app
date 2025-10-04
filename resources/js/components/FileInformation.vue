@@ -69,7 +69,7 @@ const formatDate = (dateString: string): string => {
             </div>
             <div>
                 <dt class="text-sm font-medium text-gray-500">Share ID</dt>
-                <dd class="bg-gray-100 p-1 rounded-lg mt-1 text-sm text-gray-900 dark:text-white font-mono">
+                <dd class="bg-gray-100 dark:bg-gray-500 p-1 rounded-lg mt-1 text-sm text-gray-900 dark:text-white font-mono">
                     {{ file.share_id || 'N/A' }}
                 </dd>
             </div>

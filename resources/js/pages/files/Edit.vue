@@ -44,7 +44,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: `/files/${props.file.id}`,
     },
     {
-        title: 'Edit',
+        title: 'Edit File',
         href: `/files/${props.file.id}/edit`,
     },
 ];

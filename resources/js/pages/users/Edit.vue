@@ -37,7 +37,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: `/users/${props.user.id}`,
     },
     {
-        title: 'Edit',
+        title: 'Edit User',
         href: `/users/${props.user.id}/edit`,
     },
 ];

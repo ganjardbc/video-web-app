@@ -21,7 +21,7 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: '/users',
     },
     {
-        title: 'Create User',
+        title: 'Create New User',
         href: '/users/create',
     },
 ];
@@ -43,7 +43,7 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="Create User" />
+    <Head title="Create New User" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div class="flex h-full flex-1 flex-col gap-6 p-6">
