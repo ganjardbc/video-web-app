@@ -52,7 +52,7 @@ import AppLogoIcon from '@/components/AppLogoIcon.vue';
 
         <footer>
             <div class="w-full py-4 text-center text-xs lg:text-sm text-gray-500 dark:text-gray-400">
-                &copy; 2024 Video Upload App. All rights reserved.
+                &copy; 2025 Vish. All rights reserved.
             </div>
         </footer>
     </div>
